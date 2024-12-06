@@ -6,12 +6,14 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 use clap::{Parser, Subcommand};
 use day1::{day1_1, day1_2};
 use day2::{day2_1, day2_2};
 use day3::{day3_1, day3_2};
 use day4::{day4_1, day4_2};
 use crate::day5::{day5_1, day5_2};
+use crate::day6::{day6_1, day6_2};
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -32,6 +34,8 @@ enum Commands {
     Day4_2,
     Day5_1,
     Day5_2,
+    Day6_1,
+    Day6_2,
 }
 
 fn main() {
@@ -47,5 +51,7 @@ fn main() {
         Commands::Day4_2 => day4_2(),
         Commands::Day5_1 => day5_1(),
         Commands::Day5_2 => day5_2(),
+        Commands::Day6_1 => day6_1(),
+        Commands::Day6_2 => day6_2(),
     }
 }
