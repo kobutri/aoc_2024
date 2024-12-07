@@ -7,11 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74afaa00-b02b-4c82-a1f9-2733c49328fe" name="Changes" comment="day5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+    <list default="true" id="74afaa00-b02b-4c82-a1f9-2733c49328fe" name="Changes" comment="day7">
+      <change beforePath="$PROJECT_DIR$/src/day7.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day7.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,7 @@
       <workItem from="1733523813582" duration="401000" />
       <workItem from="1733574172952" duration="56000" />
       <workItem from="1733578646232" duration="40000" />
-      <workItem from="1733578691348" duration="922000" />
+      <workItem from="1733578691348" duration="2108000" />
     </task>
     <task id="LOCAL-00001" summary="day5">
       <option name="closed" value="true" />
@@ -110,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733409548510</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="day7">
+      <option name="closed" value="true" />
+      <created>1733580356710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733580356710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +123,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="day5" />
-    <option name="LAST_COMMIT_MESSAGE" value="day5" />
+    <MESSAGE value="day7" />
+    <option name="LAST_COMMIT_MESSAGE" value="day7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -135,8 +141,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/day7.rs</url>
-          <line>91</line>
-          <option name="timeStamp" value="5" />
+          <line>112</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

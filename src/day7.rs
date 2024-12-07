@@ -2,29 +2,28 @@ use core::panic;
 use std::vec;
 
 use itertools::Itertools;
-use num_bigint::{BigUint, RandBigInt, ToBigUint};
 use rand::Rng;
 
-fn has_solution(target: &BigUint, current: &BigUint, values: &[BigUint]) -> bool {
+fn has_solution(target: u128, current: u128, values: &[u128]) -> bool {
     if values.is_empty() {
         return target == current;
     }
-    has_solution(target, &(current + &values[0]), &values[1..])
-        || has_solution(target, &(current * &values[0]), &values[1..])
+    has_solution(target, current + values[0], &values[1..])
+        || has_solution(target, current * values[0], &values[1..])
 }
 
-fn concat_digits(n1: &BigUint, n2: &BigUint) -> BigUint {
+fn concat_digits(n1: u128, n2: u128) -> u128 {
     let mut digits = 1;
     let mut temp = n2.clone();
-    while temp >= 10.to_biguint().unwrap() {
+    while temp >= 10 {
         digits += 1;
-        temp /= 10.to_biguint().unwrap();
+        temp /= 10;
     }
 
-    n1 * 10.to_biguint().unwrap().pow(digits) + n2
+    n1 * 10u128.pow(digits) + n2
 }
 
-fn has_solution2(target: &BigUint, current: &BigUint, values: &[BigUint]) -> bool {
+fn has_solution2(target: u128, current: u128, values: &[u128]) -> bool {
     // println!(
     //     "target: {}, current: {}, values: {:?}",
     //     target, current, values
@@ -35,19 +34,19 @@ fn has_solution2(target: &BigUint, current: &BigUint, values: &[BigUint]) -> boo
     if values.is_empty() {
         return target == current;
     }
-    if has_solution(target, &(current + &values[0]), &values[1..]) {
+    if has_solution2(target, current + values[0], &values[1..]) {
         return true;
     }
-    if has_solution(target, &(current * &values[0]), &values[1..]) {
+    if has_solution2(target, current * values[0], &values[1..]) {
         return true;
     }
-    if has_solution2(target, &concat_digits(current, &values[0]), &values[1..]) {
+    if has_solution2(target, concat_digits(current, values[0]), &values[1..]) {
         return true;
     }
     false
 }
 
-fn get_input() -> Vec<(BigUint, Vec<BigUint>)> {
+fn get_input() -> Vec<(u128, Vec<u128>)> {
     let input = "190: 10 19
 3267: 81 40 27
 83: 17 5
@@ -64,10 +63,10 @@ fn get_input() -> Vec<(BigUint, Vec<BigUint>)> {
         .lines()
         .map(|line| {
             let (target, rest) = line.split_once(": ").unwrap();
-            let target = target.parse::<BigUint>().unwrap();
+            let target = target.parse::<u128>().unwrap();
             let values = rest
                 .split(" ")
-                .map(|v| v.parse::<BigUint>().unwrap())
+                .map(|v| v.parse::<u128>().unwrap())
                 .collect_vec();
             (target, values)
         })
@@ -79,77 +78,49 @@ pub fn day7_1() {
     let total = input
         .iter()
         .filter_map(|(target, values)| {
-            if has_solution(target, &0.to_biguint().unwrap(), values) {
+            if has_solution(*target, 0, values) {
                 Some(target)
             } else {
                 None
             }
         })
-        .sum::<BigUint>();
+        .sum::<u128>();
 
     println!("{}", total);
 }
 pub fn day7_2() {
-    let (target, values, ops) = generate_true_cases();
-    let target = 139410704293280815u128.to_biguint().unwrap();
-    let values = [293, 684, 859, 831, 796, 665, 815].map(|v| v.to_biguint().unwrap());
-    let ops = ['|', '*', '*', '+', '*', '|'];
-    if has_solution2(&target, &values[0], &values[1..]) {
-        println!("success");
-    } else {
-        println!("failure");
-    }
-    return;
-    let mut current = values[0].clone();
-    let mut ops_index = 0;
-    for val in &values[1..] {
-       let op = ops[ops_index];
-        if op == '+' {
-            current = current + val;
-        } else if op == '*' {
-            current = current * val;
-        } else if op == '|' {
-            current = concat_digits(&current, val);
-        } else {
-            unreachable!()
-        }
-        ops_index += 1;
-    }
-    println!("target: {}, values: {:?}, ops: {:?}, current: {}", target, values, ops, current);
-    return;
-    loop {
-        let (target, values, ops) = generate_true_cases();
-        if !has_solution2(&target, &values[0], &values[1..]) {
-            panic!("target: {}, numbers: {:?}, ops: {:?}", target, values, ops);
-        } else {
-            println!("success");
-        }
-    }
-    // let input = get_input();
-    // let mut false_counter = 0;
-    // let total = input
-    //     .iter()
-    //     .filter_map(|(target, values)| {
-    //         if has_solution2(*target, 0, values) {
-    //             Some(*target)
-    //         } else {
-    //             false_counter += 1;
-    //             None
-    //         }
-    //     })
-    //     .sum::<BigUint>();
-    //
-    // println!("{}", false_counter);
-    //
-    // println!("{}", total);
+    // loop {
+    //     let (target, values, ops) = generate_true_cases();
+    //     if !has_solution2(target, values[0], &values[1..]) {
+    //         panic!("target: {}, numbers: {:?}, ops: {:?}", target, values, ops);
+    //     } else {
+    //         // println!("success");
+    //     }
+    // }
+    let input = get_input();
+    let mut false_counter = 0;
+    let total = input
+        .iter()
+        .filter_map(|(target, values)| {
+            if has_solution2(*target, 0, values) {
+                Some(*target)
+            } else {
+                false_counter += 1;
+                None
+            }
+        })
+        .sum::<u128>();
+    
+    println!("{}", false_counter);
+    
+    println!("{}", total);
 }
 
-fn generate_true_cases() -> (BigUint, Vec<BigUint>, Vec<char>) {
+fn generate_true_cases() -> (u128, Vec<u128>, Vec<char>) {
     let count = rand::thread_rng().gen_range(2..=10);
     let values = (0..count)
         .map(|_| {
-            rand::thread_rng()
-                .gen_biguint_range(&1.to_biguint().unwrap(), &1000.to_biguint().unwrap())
+            rand::thread_rng().gen_range(1..1000)
         })
         .collect_vec();
 
@@ -167,7 +138,7 @@ fn generate_true_cases() -> (BigUint, Vec<BigUint>, Vec<char>) {
                 acc * e
             } else if op == 2 {
                 ops.push('|');
-                concat_digits(&acc, &e)
+                concat_digits(acc, e)
             } else {
                 unreachable!()
             }
