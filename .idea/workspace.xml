@@ -7,7 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74afaa00-b02b-4c82-a1f9-2733c49328fe" name="Changes" comment="fix day7">
+    <list default="true" id="74afaa00-b02b-4c82-a1f9-2733c49328fe" name="Changes" comment="ide files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
@@ -16,7 +16,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:release" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -68,8 +68,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Run aoc_2024" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="buildProfileId" value="dev" />
-      <option name="command" value="run --package aoc_2024 --bin aoc_2024 -- day8-2" />
+      <option name="buildProfileId" value="release" />
+      <option name="command" value="run --package aoc_2024 --bin aoc_2024 -- day9-2" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -113,7 +113,8 @@
       <workItem from="1733578691348" duration="2242000" />
       <workItem from="1733661951733" duration="23000" />
       <workItem from="1733664042993" duration="46000" />
-      <workItem from="1733664094927" duration="480000" />
+      <workItem from="1733664094927" duration="556000" />
+      <workItem from="1733746605848" duration="2915000" />
     </task>
     <task id="LOCAL-00001" summary="day5">
       <option name="closed" value="true" />
@@ -139,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733580917012</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix day8">
+      <option name="closed" value="true" />
+      <created>1733664713532</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733664713532</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ide files">
+      <option name="closed" value="true" />
+      <created>1733664731295</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733664731295</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +166,9 @@
     <MESSAGE value="day5" />
     <MESSAGE value="day7" />
     <MESSAGE value="fix day7" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix day7" />
+    <MESSAGE value="fix day8" />
+    <MESSAGE value="ide files" />
+    <option name="LAST_COMMIT_MESSAGE" value="ide files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -163,6 +182,11 @@
           <url>file://$PROJECT_DIR$/src/day6.rs</url>
           <line>37</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/day9.rs</url>
+          <line>76</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
