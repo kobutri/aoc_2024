@@ -9,3 +9,6 @@ regex = "1.11.1"
 itertools = "0.13.0"
 rand = "0.8.5"
 num-bigint = { version = "0.4.6", features = ["rand"] }
+typed-index-collections = "3.2.3"
+derive_more = { version = "1.0.0", features = ["full"]}
+pheap = "0.3.0"
