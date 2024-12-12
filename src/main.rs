@@ -1,5 +1,7 @@
 #![feature(array_windows)]
 #![feature(iter_intersperse)]
+#![feature(iter_chain)]
+extern crate core;
 
 mod day1;
 mod day2;
@@ -12,6 +14,7 @@ mod day8;
 mod day9;
 mod day10;
 mod day11_2018;
+mod day11;
 
 use clap::{Parser, Subcommand};
 use day1::{day1_1, day1_2};
@@ -24,6 +27,7 @@ use day7::{day7_1, day7_2};
 use day8::{day8_1, day8_2};
 use day9::{day9_1, day9_2};
 use crate::day10::{day10_1, day10_2};
+use crate::day11::{day11_1, day11_2};
 use crate::day11_2018::day15_1_2018;
 
 #[derive(Parser)]
@@ -56,6 +60,8 @@ enum Commands {
     Day10_1,
     Day10_2,
     Day15_1_2018,
+    Day11_1,
+    Day11_2,
 }
 
 fn main() {
@@ -82,5 +88,7 @@ fn main() {
         Commands::Day10_1 => day10_1(),
         Commands::Day10_2 => day10_2(),
         Commands::Day15_1_2018 => day15_1_2018(),
+        Commands::Day11_1 => day11_1(),
+        Commands::Day11_2 => day11_2(),
     }
 }
