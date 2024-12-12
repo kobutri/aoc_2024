@@ -68,6 +68,7 @@ dependencies = [
  "derive_more",
  "itertools",
  "num-bigint",
+ "num-traits",
  "pheap",
  "rand",
  "regex",

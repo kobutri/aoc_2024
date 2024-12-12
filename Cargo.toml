@@ -12,3 +12,4 @@ num-bigint = { version = "0.4.6", features = ["rand"] }
 typed-index-collections = "3.2.3"
 derive_more = { version = "1.0.0", features = ["full"]}
 pheap = "0.3.0"
+num-traits = "0.2.19"
