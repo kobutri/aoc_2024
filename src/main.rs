@@ -13,7 +13,7 @@ mod day7;
 mod day8;
 mod day9;
 mod day10;
-mod day11_2018;
+mod day15_2018;
 mod day11;
 mod day12;
 mod day13;
@@ -30,6 +30,7 @@ use day8::{day8_1, day8_2};
 use day9::{day9_1, day9_2};
 use crate::day10::{day10_1, day10_2};
 use crate::day11::{day11_1, day11_2};
+use crate::day15_2018::day15_1_2018;
 use crate::day12::{day12_1, day12_2};
 use crate::day13::{day13_1, day13_2};
 
@@ -42,6 +43,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    Day15_1_2018,
     Day1_1,
     Day1_2,
     Day2_1,
@@ -62,7 +64,6 @@ enum Commands {
     Day9_2,
     Day10_1,
     Day10_2,
-    Day15_1_2018,
     Day11_1,
     Day11_2,
     Day12_1,
@@ -74,6 +75,7 @@ enum Commands {
 fn main() {
     let cli = Cli::parse();
     match &cli.command {
+        Commands::Day15_1_2018 => day15_1_2018(),
         Commands::Day1_1 => day1_1(),
         Commands::Day1_2 => day1_2(),
         Commands::Day2_1 => day2_1(),
@@ -94,7 +96,6 @@ fn main() {
         Commands::Day9_2 => day9_2(),
         Commands::Day10_1 => day10_1(),
         Commands::Day10_2 => day10_2(),
-        Commands::Day15_1_2018 => day15_1_2018(),
         Commands::Day11_1 => day11_1(),
         Commands::Day11_2 => day11_2(),
         Commands::Day12_1 => day12_1(),
