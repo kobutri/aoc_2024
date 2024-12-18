@@ -1,3 +1,6 @@
+#![feature(coroutines)]
+#![feature(iter_from_coroutine)]
+
 mod day1;
 mod day10;
 mod day11;
@@ -6,6 +9,8 @@ mod day13;
 mod day14;
 
 mod day15;
+mod day16;
+mod day17;
 mod day15_2018;
 mod day2;
 mod day3;
@@ -33,6 +38,8 @@ use day6::{day6_1, day6_2};
 use day7::{day7_1, day7_2};
 use day8::{day8_1, day8_2};
 use day9::{day9_1, day9_2};
+use crate::day16::{day16_1, day16_2};
+use crate::day17::{day17_1, day17_2};
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -74,6 +81,10 @@ enum Commands {
     Day14_2,
     Day15_1,
     Day15_2,
+    Day16_1,
+    Day16_2,
+    Day17_1,
+    Day17_2,
 }
 
 fn main() {
@@ -110,5 +121,9 @@ fn main() {
         Commands::Day14_2 => day14_2(),
         Commands::Day15_1 => day15_1(),
         Commands::Day15_2 => day15_2(),
+        Commands::Day16_1 => day16_1(),
+        Commands::Day16_2 => day16_2(),
+        Commands::Day17_1 => day17_1(),
+        Commands::Day17_2 => day17_2(),
     }
 }
