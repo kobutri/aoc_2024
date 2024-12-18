@@ -1,6 +1,27 @@
 #![feature(coroutines)]
 #![feature(iter_from_coroutine)]
 
+use clap::{Parser, Subcommand};
+use crate::day15_2018::day15_1_2018;
+use crate::day1::{day1_1, day1_2};
+use crate::day10::{day10_1, day10_2};
+use crate::day11::{day11_1, day11_2};
+use crate::day12::{day12_1, day12_2};
+use crate::day13::{day13_1, day13_2};
+use crate::day14::{day14_1, day14_2};
+use crate::day15::{day15_1, day15_2};
+use crate::day16::{day16_1, day16_2};
+use crate::day17::{day17_1, day17_2};
+use crate::day18::{day18_1, day18_2};
+use crate::day2::{day2_1, day2_2};
+use crate::day3::{day3_1, day3_2};
+use crate::day4::{day4_1, day4_2};
+use crate::day5::{day5_1, day5_2};
+use crate::day6::{day6_1, day6_2};
+use crate::day7::{day7_1, day7_2};
+use crate::day8::{day8_1, day8_2};
+use crate::day9::{day9_1, day9_2};
+
 mod day1;
 mod day10;
 mod day11;
@@ -11,6 +32,7 @@ mod day14;
 mod day15;
 mod day16;
 mod day17;
+mod day18;
 mod day15_2018;
 mod day2;
 mod day3;
@@ -21,25 +43,7 @@ mod day7;
 mod day8;
 mod day9;
 
-use crate::day10::{day10_1, day10_2};
-use crate::day11::{day11_1, day11_2};
-use crate::day12::{day12_1, day12_2};
-use crate::day13::{day13_1, day13_2};
-use crate::day15_2018::day15_1_2018;
-use clap::{Parser, Subcommand};
-use day1::{day1_1, day1_2};
-use day14::{day14_1, day14_2};
-use day15::{day15_1, day15_2};
-use day2::{day2_1, day2_2};
-use day3::{day3_1, day3_2};
-use day4::{day4_1, day4_2};
-use day5::{day5_1, day5_2};
-use day6::{day6_1, day6_2};
-use day7::{day7_1, day7_2};
-use day8::{day8_1, day8_2};
-use day9::{day9_1, day9_2};
-use crate::day16::{day16_1, day16_2};
-use crate::day17::{day17_1, day17_2};
+
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -85,6 +89,8 @@ enum Commands {
     Day16_2,
     Day17_1,
     Day17_2,
+    Day18_1,
+    Day18_2,
 }
 
 fn main() {
@@ -125,5 +131,7 @@ fn main() {
         Commands::Day16_2 => day16_2(),
         Commands::Day17_1 => day17_1(),
         Commands::Day17_2 => day17_2(),
+        Commands::Day18_1 => day18_1(),
+        Commands::Day18_2 => day18_2(),
     }
 }
