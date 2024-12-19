@@ -1,6 +1,3 @@
-#![feature(coroutines)]
-#![feature(iter_from_coroutine)]
-
 use clap::{Parser, Subcommand};
 use crate::day15_2018::day15_1_2018;
 use crate::day1::{day1_1, day1_2};
@@ -13,6 +10,7 @@ use crate::day15::{day15_1, day15_2};
 use crate::day16::{day16_1, day16_2};
 use crate::day17::{day17_1, day17_2};
 use crate::day18::{day18_1, day18_2};
+use crate::day19::{day19_1, day19_2};
 use crate::day2::{day2_1, day2_2};
 use crate::day3::{day3_1, day3_2};
 use crate::day4::{day4_1, day4_2};
@@ -33,6 +31,7 @@ mod day15;
 mod day16;
 mod day17;
 mod day18;
+mod day19;
 mod day15_2018;
 mod day2;
 mod day3;
@@ -91,6 +90,8 @@ enum Commands {
     Day17_2,
     Day18_1,
     Day18_2,
+    Day19_1,
+    Day19_2,
 }
 
 fn main() {
@@ -133,5 +134,7 @@ fn main() {
         Commands::Day17_2 => day17_2(),
         Commands::Day18_1 => day18_1(),
         Commands::Day18_2 => day18_2(),
+        Commands::Day19_1 => day19_1(),
+        Commands::Day19_2 => day19_2(),
     }
 }
