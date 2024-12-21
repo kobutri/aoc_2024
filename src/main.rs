@@ -13,6 +13,7 @@ use crate::day18::{day18_1, day18_2};
 use crate::day19::{day19_1, day19_2};
 use crate::day2::{day2_1, day2_2};
 use crate::day20::{day20_1, day20_2};
+use crate::day21::{day21_1, day21_2};
 use crate::day3::{day3_1, day3_2};
 use crate::day4::{day4_1, day4_2};
 use crate::day5::{day5_1, day5_2};
@@ -34,6 +35,7 @@ mod day17;
 mod day18;
 mod day19;
 mod day20;
+mod day21;
 mod day15_2018;
 mod day2;
 mod day3;
@@ -96,6 +98,8 @@ enum Commands {
     Day19_2,
     Day20_1,
     Day20_2,
+    Day21_1,
+    Day21_2,
 }
 
 fn main() {
@@ -142,5 +146,7 @@ fn main() {
         Commands::Day19_2 => day19_2(),
         Commands::Day20_1 => day20_1(),
         Commands::Day20_2 => day20_2(),
+        Commands::Day21_1 => day21_1(),
+        Commands::Day21_2 => day21_2(),
     }
 }
